@@ -16,7 +16,7 @@ Assign application roles to security groups for Azure Active Directory applicati
 ## Solution
 
 - Create a JSON file that maps groups to roles.
-- Run `azure-assign` and pass it this JSON file.
+- Run `azure-assign` and pass it a JSON assignments file.
 
 ## Installation
 
@@ -24,13 +24,13 @@ Since this is a command-line utility, we recommend using the -g flag.
 
     npm install -g
 
-You can also omit the -g flag. In that case, you must run it using the node command.
+You can also omit the -g flag. In that case, you must run it using the node command as described in the *Execution* section.
 
     npm install
 
 ## Configuration
 
-Create a JSON file, let's call it `assignments.json` that looks like this:
+Create a JSON file, let's call it `assignments.json`, that looks like this:
 
 ```json
 {
@@ -59,14 +59,13 @@ The tenant is the domain name of your Azure AD instance.
 
 The credentials are the client ID and the secret application key for an Azure AD application that has been configured for directory reading and writing. (In this example, they are complely made-up values.) Note that is is quite likely that the application specified in the credentials and the application being configured are the same, as they are in this example.
 
-The last block is an array of one or more applications. Each is identified by its client ID and contains an array of assignments that describe which groups are assigned what roles *for that application*. The roles are specified using the `value` property in the applications manifest.json file.
+The last block is an array of one or more applications. Each is identified by its client ID and contains an array of assignments that describe which groups are assigned to what roles *for that application*. The roles are specified using the `value` property in the `appRoles` section of the application's manifest.json file.
 
-Note that we use the group ID, and not the display name as this can be easily changed in the Azure AD portal.
-You can add as many applications as you like. They can each have their own roles and required different groups.
+Note that we use the group ID, and not the display name as this can be easily changed in the Azure portal. You can add as many applications as you like. They can each have their group and role assignments. The groups and roles need not be the same for each application.
 
 ## Execution
 
-If you installed using the -g flag, simply run it from the command line:
+If you installed this utility using the -g flag, simply run it from the command line:
 
     azure-assign assignments.json
 
@@ -74,14 +73,15 @@ If you did not use the -g flag, just run it using node:
 
     node azure-assign assignments.json
 
-## Programatic Interface
+## Programmatic Interface
 
 This module exports the assignment function that can be called from your program instead of running it from the command line.
 
 ```javascript
-var assignRoles = require('azure-assign');
+var assignRoles = require('azure-assign'),
+    assignments = require('./assighments');
 
-assignRoles(config, function (err, modifications) {
+assignRoles(assignments, function (err, modifications) {
     if (err) {
         console.error(err.message);
     } else {
@@ -90,7 +90,7 @@ assignRoles(config, function (err, modifications) {
 });
 ```
 
-The modifications is an arrary of object that detail the additions and deletions made to each application.
+The modifications passed to the callback function is an arrary of objects that detail the additions and deletions made for each application.
 
 ## Advanced Topics
 
