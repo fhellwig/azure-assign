@@ -2,6 +2,8 @@
 
 Assign application roles to security groups for Azure Active Directory applications
 
+Latest Version: **0.0.3**
+
 ## Scenario
 
 - You have an Azure Active Directory (Azure AD) application and you have modified the application's manifest.json file by adding application roles.
