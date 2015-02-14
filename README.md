@@ -61,7 +61,7 @@ The credentials are the client ID and the secret application key for an Azure AD
 
 The last block is an array of one or more applications. Each is identified by its client ID and contains an array of assignments that describe which groups are assigned to what roles *for that application*. The roles are specified using the `value` property in the `appRoles` section of the application's manifest.json file.
 
-Note that we use the group ID, and not the display name as this can be easily changed in the Azure portal. You can add as many applications as you like. They can each have their group and role assignments. The groups and roles need not be the same for each application.
+Note that we use the group ID, and not the display name as this can be easily changed in the Azure portal. You can add as many applications as you like. They can each have their own group and role assignments. The groups and roles need not be the same for each application.
 
 ## Execution
 
@@ -79,7 +79,7 @@ This module exports the assignment function that can be called from your program
 
 ```javascript
 var assignRoles = require('azure-assign'),
-    assignments = require('./assighments');
+    assignments = require('./assignments');
 
 assignRoles(assignments, function (err, modifications) {
     if (err) {
@@ -101,6 +101,10 @@ This utility follows the [closed-world assumption](http://en.wikipedia.org/wiki/
 ### Idempotency
 
 This utility can be executed multiple time and the assignments will not change. After running it the first time, you will see additions and deletions (if required). Running it again should result in no modifications (assuming another party has not modified your Azure AD instance between runs).
+
+## Limitations
+
+The assignments file is not checked for correctness. If property names are not correct or missing, exceptions are thrown that may not point to the actual error in the assignments file.
 
 ## License
 
