@@ -1,0 +1,29 @@
+{
+  "name": "azure-assign",
+  "version": "0.0.1",
+  "description": "Assign application roles to security groups for Azure Active Directory applications",
+  "main": "azure-assign.js",
+  "bin": "./azure-assign.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fhellwig/azure-assign.git"
+  },
+  "keywords": [
+    "azure",
+    "active",
+    "directory"
+  ],
+  "author": "Frank Hellwig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fhellwig/azure-assign/issues"
+  },
+  "homepage": "https://github.com/fhellwig/azure-assign",
+  "dependencies": {
+    "async": "^0.9.0",
+    "azure-graphapi": "0.0.3"
+  }
+}

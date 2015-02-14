@@ -1,0 +1,21 @@
+{
+    "tenant": "yourdomain.com",
+    "credentials": {
+        "clientId": "3cc99cdc-29ed-4002-b728-90c5251c2c9c",
+        "clientSecret": "AB209sq3lksdj09384ljdfl03jkl8KJKHhklwei85ld="
+    },
+    "applications": [{
+        "clientId": "3cc99cdc-29ed-4002-b728-90c5251c2c9c",
+        "assignments": [{
+            "groupId": "110634fa-aeb0-4c34-a1d5-9c9a1e211e37",
+            "roles": ["reader"]
+        }, {
+            "groupId": "5f2a61db-f133-4979-87bb-5938924669a5",
+            "roles": ["reader", "writer"]
+        }, {
+            "groupId": "7124217c-2c95-4ac5-809d-d7c868723ffb",
+            "roles": ["reader", "writer", "admin"]
+        }]
+    }]
+}
+
