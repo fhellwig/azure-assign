@@ -2,7 +2,7 @@
 
 Assign application roles to security groups for Azure Active Directory applications
 
-Latest Version: **0.0.3**
+Latest Version: **0.0.4**
 
 ## Scenario
 
