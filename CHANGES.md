@@ -1,5 +1,9 @@
 # azure-assign change log
 
+## Version 0.0.4
+
+- Changed the azure-graphapi dependency from 0.0.4 to 0.0.5.
+
 ## Version 0.0.3
 
 - Changed the azure-graphapi dependency from 0.0.3 to 0.0.4.
