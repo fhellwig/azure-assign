@@ -59,7 +59,7 @@ Create a JSON file, let's call it `assignments.json`, that looks like this:
 
 The tenant is the domain name of your Azure AD instance.
 
-The credentials are the client ID and the secret application key for an Azure AD application that has been configured for directory reading and writing. (In this example, they are complely made-up values.) Note that is is quite likely that the application specified in the credentials and the application being configured are the same, as they are in this example.
+The credentials are the client ID and the secret application key for an Azure AD application that has been configured for directory reading and writing. (In this example, they are complely made-up values.) Note that it is quite likely that the application specified in the credentials and the application being configured are the same, as they are in this example.
 
 The last block is an array of one or more applications. Each is identified by its client ID and contains an array of assignments that describe which groups are assigned to what roles *for that application*. The roles are specified using the `value` property in the `appRoles` section of the application's manifest.json file.
 
