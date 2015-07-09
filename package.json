@@ -1,6 +1,6 @@
 {
   "name": "azure-assign",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Assign application roles to security groups for Azure Active Directory applications",
   "main": "azure-assign.js",
   "bin": "./azure-assign.js",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/fhellwig/azure-assign",
   "dependencies": {
-    "async": "^0.9.0",
-    "azure-graphapi": "0.0.5"
+    "async": "^1.3.0",
+    "azure-graphapi": "0.0.7"
   }
 }

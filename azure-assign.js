@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 
 var path = require('path'),
     async = require('async'),
