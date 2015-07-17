@@ -1,6 +1,6 @@
 {
   "name": "azure-assign",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Assign application roles to security groups for Azure Active Directory applications",
   "main": "azure-assign.js",
   "bin": "./azure-assign.js",
